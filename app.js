@@ -8,7 +8,7 @@ window.addEventListener ('load', function() {
         
         car.innerHTML = Mustache.render(
             document.querySelector('#car-template').innerHTML,
-            { name: array[i].name}
+            { name: array[i].name, size: array[i].size, money: array[i].money }
         );
         parent.appendChild(car);
     }
@@ -17,25 +17,25 @@ window.addEventListener ('load', function() {
 let array = [
     {
         name: 'Jeep Wrangler',
-        size: 4,
+        size: 4 + ' spaces',
         money: '$20',
     },
 
     {
         name: 'Chrysler 300',
-        size: 5,
+        size: 5 + ' spaces',
         money: '$40',
     },
 
     {
         name: 'Honda Civic',
-        size: 3,
+        size: 3 + ' spaces',
         money: '$60',
     },
 
     {
         name: 'Nissan Altima',
-        size: 4,
+        size: 4 + ' spaces',
         money: '$30',
     },
 ];

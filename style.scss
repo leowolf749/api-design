@@ -6,20 +6,25 @@
 header {
     background-color: rosybrown;
     color: floralwhite;
+    text-align: center;
+    border: 8px double floralwhite;
 }
 
 body {
     background-color: rosybrown;
     
     ul {
+        @include grid-row();
         padding: 0;
-        width: 30%;
+        width: 80%;
 
         li {
             background-color: floralwhite;
             list-style-type: none;
             text-align: center;
-            width: 100%;
+            padding: 10px;
+            width: 50%;
+            border: 5px solid rosybrown;
         }
     }
 }

@@ -1290,17 +1290,29 @@ button {
     float: left; } }
 header {
   background-color: rosybrown;
-  color: floralwhite; }
+  color: floralwhite;
+  text-align: center;
+  border: 8px double floralwhite; }
 
 body {
   background-color: rosybrown; }
   body ul {
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0;
-    width: 30%; }
+    width: 80%; }
+    body ul::before, body ul::after {
+      content: ' ';
+      display: table; }
+    body ul::after {
+      clear: both; }
     body ul li {
       background-color: floralwhite;
       list-style-type: none;
       text-align: center;
-      width: 100%; }
+      padding: 10px;
+      width: 50%;
+      border: 5px solid rosybrown; }
 
 /*# sourceMappingURL=main.css.map */
