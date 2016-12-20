@@ -1,0 +1,25 @@
+@import 'node_modules/foundation-sites/scss/foundation';
+
+@include foundation-global-styles;
+@include foundation-grid;
+
+header {
+    background-color: rosybrown;
+    color: floralwhite;
+}
+
+body {
+    background-color: rosybrown;
+    
+    ul {
+        padding: 0;
+        width: 30%;
+
+        li {
+            background-color: floralwhite;
+            list-style-type: none;
+            text-align: center;
+            width: 100%;
+        }
+    }
+}

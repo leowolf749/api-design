@@ -2,21 +2,22 @@
 
 <html>
     <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
         <script src="app.js"></script>
+        <link rel="stylesheet" href="main.css">
+
+        <script id="car-template" type="x-mustache-template">
+            <h3>{{ name }}</h3>
+            <p>{{ size }}</p>
+            <p>{{ money }}</p>
+        </script>
     </head>
 
     <body>
         <header>
-            <h1></h1>
+            <h1>ParKing</h1>
         </header>
-        
-        <section>
-            <h2></h2>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </section>
+        <ul id="cars"></ul>
 
     </body>
 
