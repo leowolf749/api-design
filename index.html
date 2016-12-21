@@ -6,10 +6,20 @@
         <script src="app.js"></script>
         <link rel="stylesheet" href="main.css">
 
+        <script id="lot-template" type="x-mustache-template">
+            <h3>{{ id }}</h3>
+            <p>{{ rate }}</p>
+            <p>{{ capacity }}</p>
+            <p>{{ full }}</p>
+        </script>
+
         <script id="car-template" type="x-mustache-template">
             <h3>{{ name }}</h3>
             <p>{{ size }}</p>
             <p>{{ money }}</p>
+            {{#lots}}
+            <button>{{ button }}</button>
+            {{/lots}}
         </script>
     </head>
 
@@ -17,7 +27,10 @@
         <header>
             <h1>Derreferp Gnikrap</h1>
         </header>
-        <ul id="cars"></ul>
+        <div id="lots"></div>
+        <ul>
+            <div id="cars"></div>
+        </ul>
 
     </body>
 

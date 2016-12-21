@@ -4,7 +4,7 @@
 @include foundation-grid;
 
 header {
-    background-color: rosybrown;
+    background-color: indianred;
     color: floralwhite;
     text-align: center;
     border: 8px double floralwhite;
@@ -12,6 +12,15 @@ header {
 
 body {
     background-color: rosybrown;
+
+        
+     #lots {
+        background-color: floralwhite;
+        list-style-type: none;
+        text-align: center;
+        width: 20%;
+        }
+    
     
     ul {
         @include grid-row();
@@ -25,6 +34,16 @@ body {
             padding: 10px;
             width: 100%;
             border: 5px solid rosybrown;
+
+            button {
+                background-color: indianred;
+                color: floralwhite;
+                margin-bottom: 18.720px;
+                width: 20%;
+                height: 30px;
+                border-radius: 20px;
+            }
+
         }
     }
 }

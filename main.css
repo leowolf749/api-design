@@ -1289,13 +1289,18 @@ button {
     margin-right: 0;
     float: left; } }
 header {
-  background-color: rosybrown;
+  background-color: indianred;
   color: floralwhite;
   text-align: center;
   border: 8px double floralwhite; }
 
 body {
   background-color: rosybrown; }
+  body #lots {
+    background-color: floralwhite;
+    list-style-type: none;
+    text-align: center;
+    width: 20%; }
   body ul {
     max-width: 75rem;
     margin-left: auto;
@@ -1314,5 +1319,12 @@ body {
       padding: 10px;
       width: 100%;
       border: 5px solid rosybrown; }
+      body ul li button {
+        background-color: indianred;
+        color: floralwhite;
+        margin-bottom: 18.720px;
+        width: 20%;
+        height: 30px;
+        border-radius: 20px; }
 
 /*# sourceMappingURL=main.css.map */
