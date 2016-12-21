@@ -85,14 +85,11 @@ function getLot() {
     console.log('request sent');
 }
 
-function showLot(lotInfo) {
-
-}
 
 // POST request to send 'Car' info
 
 function sendCar() {
     let request = new XMLHttpRequest();
     request.open('POST', 'https://gentle-shore-57758.herokuapp.com/requestParking');
-
+    
 }

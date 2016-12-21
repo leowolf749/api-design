@@ -14,12 +14,21 @@ body {
     background-color: rosybrown;
 
         
-     #lots {
-        background-color: floralwhite;
-        list-style-type: none;
-        text-align: center;
-        width: 20%;
+    div {
+        @include grid-row();
+        padding: 0;
+        width: 80%;
+
+        li {
+            @include grid-column(3);
+            background-color: floralwhite;
+            list-style-type: none;
+            border: 5px solid rosybrown;
+            text-align: center;
+            margin-top: 30px;
+            width: 25%;
         }
+    }
     
     
     ul {

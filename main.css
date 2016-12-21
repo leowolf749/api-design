@@ -1296,11 +1296,34 @@ header {
 
 body {
   background-color: rosybrown; }
-  body #lots {
-    background-color: floralwhite;
-    list-style-type: none;
-    text-align: center;
-    width: 20%; }
+  body div {
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    width: 80%; }
+    body div::before, body div::after {
+      content: ' ';
+      display: table; }
+    body div::after {
+      clear: both; }
+    body div li {
+      width: 25%;
+      float: left;
+      padding-left: 0.625rem;
+      padding-right: 0.625rem;
+      background-color: floralwhite;
+      list-style-type: none;
+      border: 5px solid rosybrown;
+      text-align: center;
+      margin-top: 30px;
+      width: 25%; }
+      @media screen and (min-width: 40em) {
+        body div li {
+          padding-left: 0.9375rem;
+          padding-right: 0.9375rem; } }
+      body div li:last-child:not(:first-child) {
+        float: right; }
   body ul {
     max-width: 75rem;
     margin-left: auto;
