@@ -2,27 +2,7 @@ window.addEventListener ('load', function() {
     
     getLot();
 
-    let parent = document.querySelector('#cars');
-    for (let i = 0; i < array.length; i++) {
 
-        let car = document.createElement('li');
-        
-        
-        car.innerHTML = Mustache.render(
-            document.querySelector('#car-template').innerHTML,
-            { name: array[i].name, 
-              size: array[i].size, 
-              money: array[i].money, 
-              lots: [{button: 'lot 1'},
-              {button: 'lot 2'},
-              {button: 'lot 3'},
-              {button: 'lot 4'}], 
-            }
-        );
-        parent.appendChild(car);
-
-        
-    }
 
 
 
@@ -73,13 +53,16 @@ function getLot() {
         lot.innerHTML = Mustache.render(
             document.querySelector('#lot-template').innerHTML,
             { id: response[i].id,
-              rate: '$' + response[i].rate,
-              capacity: 'Capacity ' + response[i].capacity,
-              full: response[i].full,  
+              rate: '$' + response[i].rate, 
+              capacity: 'Capacity: ' + response[i].count + '/' + response[i].capacity,
+            //   full: response[i].full,  
             }
         );
         lots.appendChild(lot);
     }
+
+    showCars(array, response);
+
     })
     request.send();
     console.log('request sent');
@@ -88,8 +71,51 @@ function getLot() {
 
 // POST request to send 'Car' info
 
-function sendCar() {
+function sendCar(lotId, car) {
     let request = new XMLHttpRequest();
     request.open('POST', 'https://gentle-shore-57758.herokuapp.com/requestParking');
-    
+
+}
+
+
+function showCars(array, lots) {
+        // console.log(array);
+        // console.log(lots);
+        let lotNames = [];
+        for (let i = 0; i < lots.length; i++) {
+            lotNames.push({id: i, button: lots[i].id});
+        }
+
+
+
+//              [{button: 'lot 1'},
+//               {button: 'lot 2'},
+//               {button: 'lot 3'},
+//               {button: 'lot 4'}]
+        let parent = document.querySelector('#cars');
+    for (let i = 0; i < array.length; i++) {
+
+        let car = document.createElement('li');
+        
+        
+        car.innerHTML = Mustache.render(
+            document.querySelector('#car-template').innerHTML,
+            { name: array[i].name, 
+              size: array[i].size, 
+              money: array[i].money, 
+              lots: lotNames, 
+            }
+        );
+        // Problem: we need to add event listeners.
+        // Problem pt 2: we need to make a post request, so we need the lot ID and car when we do
+        // 1. Right here, the car is array[i]. That's the right car to send.
+        // 2. The current lot depends on which button they click. If they click button 1, get lotNames[0].button
+        // 2a. Each button needs its own event listener. That means you need four different functions.
+        // 2b. You need to uniquely select each button (querySelector) so they need a unique id or class
+        // 2c. When you click button 0, send lotNames[0] as lot. Its ok to manually write out 'lotNames[0]', etc since
+        //     you'll have four different functions anyway.
+        parent.appendChild(car);
+
+        
+    }
 }
